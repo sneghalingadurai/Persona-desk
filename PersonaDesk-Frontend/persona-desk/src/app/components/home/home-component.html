@@ -1,0 +1,82 @@
+<mat-toolbar color="primary">
+    <span>PersonaDesk</span>
+    <span class="spacer"></span>
+    <a class="toolbar-link" (click)="showLoginPopup()">Login</a>
+</mat-toolbar>
+
+<div class="home-component">
+
+    <div class="header">
+        <h3 class="tagline"> Your digital life tracker </h3>
+    </div>
+
+    <div class="illustration">
+        <img src="/assets/MainPage1.png" alt="PersonaDesk">
+    </div>
+
+    <div class="description">
+        <p>
+          Track jobs, organize notes, set reminders, store files, and stay on top of your personal goals — all in one place.
+        </p>
+    </div>
+
+    <!-- Create Account Form -->
+    <form #mainPageForm="ngForm" (ngSubmit)="openCreatePopup(mainPageForm)">
+        <input 
+            type="text"
+            name="username"
+            class="email-input"
+            [(ngModel)]="gmail"
+            email placeholder="Enter Email Address" required>
+
+        <button class="btn secondary" type="submit">Create Account</button>
+
+        <div class="actions"
+            *ngIf="mainPageForm.controls['username']?.invalid && mainPageForm.controls['username']?.touched">
+            Please enter a valid email address
+        </div>
+    </form>
+
+    <!-- Create Account Popup -->
+    <p-dialog header="Create Account"
+              [(visible)]="createPopupVisible"
+              [modal]="true"
+              [closable]="true"
+              class="create-dialog">
+
+        <div class="popup-body">
+            <label class="popup-label">Email</label>
+            <input type="text" class="popup-input" [value]="gmail" readonly>
+
+            <label class="popup-label">Password</label>
+            <input type="password" class="popup-input" [(ngModel)]="password" placeholder="Enter password">
+
+            <button class="btn primary" (click)="submit()">Submit</button>
+        </div>
+
+    </p-dialog>
+
+
+    <!-- Login Popup -->
+    <p-dialog header="Login"
+              [(visible)]="loginPopupVisible"
+              [modal]="true"
+              [closable]="true">
+
+        <div class="popup-body">
+            <label  class="popup-label">Email</label>
+            <input type="email" class="popup-input" [(ngModel)]="loginEmail" placeholder="Enter Email Address" email >
+
+            <label  class="popup-label">Password</label>
+            <input type="password" class="popup-input" [(ngModel)]="loginPassword" placeholder="Enter password">
+
+            <button class="btn primary" (click)="login()">Login</button>
+        </div>
+
+    </p-dialog>
+
+    <footer>
+        <p>© 2025 PersonaDesk</p>
+    </footer>
+
+</div>
