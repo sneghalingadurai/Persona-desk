@@ -9,12 +9,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
+import { HomeDashboardComponent } from './components/home-dashboard/home-dashboard.component';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    HomeDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,9 @@ import { DialogModule } from 'primeng/dialog';
     BrowserAnimationsModule,
     MatToolbarModule,
     FormsModule,
-    DialogModule
+    DialogModule,
+    CardModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
