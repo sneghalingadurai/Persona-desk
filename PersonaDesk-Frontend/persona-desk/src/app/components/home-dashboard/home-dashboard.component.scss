@@ -1,0 +1,84 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar {
+  background-color: #5cbdb9
+}
+
+:host {
+  background-color: #ebf6f5;
+  display: block;
+  min-height: 100vh;
+}
+
+
+// .content-wrapper {
+//   // background-image: url('/assets/bgImage.png');
+//   // background-size: cover;
+//   // background-position: center 2%;
+//   // background-repeat: no-repeat;
+//   // min-height: calc(100vh - 64px);
+//   background-color: #ebf6f5;
+// }
+
+
+.toolbar-link {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 30px;
+}
+
+.card-item {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.card-grid1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: calc(66.67% - 13.33px);
+  // padding: 20px;
+  margin: 0 auto;
+}
+
+.clickable-card {
+  cursor: pointer;
+  
+  ::ng-deep .p-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  p {
+    font-weight: 600;
+    font-size: 16px;
+  }
+}
+
+.clickable-card:hover {
+  ::ng-deep .p-card {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    // box-shadow: 0 4px 12px rgba(1, 123, 253, 0.468);
+    background-color: #fbe3e8;
+    // color: b
+  }
+   p {
+    font-weight: 650;
+    font-size: 18px;
+  }
+}
+
+
