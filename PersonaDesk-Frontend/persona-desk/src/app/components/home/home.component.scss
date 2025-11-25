@@ -64,6 +64,15 @@
    border: 2px solid #639fe3;
 }
 
+
+/* Remove browser highlight when invalid form clicked */
+.btn.secondary:focus,
+.btn.secondary:active {
+  color: #fff;
+  background-color:#2c7fdf !important;
+  border: 2px solid #639fe3 !important;
+}
+
 footer {
   margin-top: 40px;
   font-size: 14px;
@@ -85,7 +94,7 @@ footer {
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
   }
   
-  &.ng-invalid.ng-touched {
+  &.ng-invalid.ng-touched  {
     border-color: #dc3545;
     box-shadow: 0 0 0 3px rgba(227, 126, 126, 0.797);
   }
@@ -148,5 +157,16 @@ footer {
     box-shadow: 0 0 0 3px rgba(227, 126, 126, 0.797);
   }
 
+}
+
+.email-input.show-error {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 3px rgba(227,126,126,0.797) !important;
+}
+
+/* Empty + touched → keep blue */
+.email-input.no-error-empty {
+  border-color: #4a90e2 !important;
+  box-shadow: none !important;
 }
 
