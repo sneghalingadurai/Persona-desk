@@ -27,14 +27,19 @@
             name="username"
             class="email-input"
             [(ngModel)]="gmail"
-            email placeholder="Enter Email Address" required>
+            email placeholder="Enter Email Address" required
+            [class.show-error]="mainPageForm.controls['username']?.invalid &&mainPageForm.controls['username']?.touched  && gmail"
+  [class.no-error-empty]="mainPageForm.controls['username']?.touched  && !gmail">
 
         <button class="btn secondary" type="submit">Create Account</button>
 
-        <div class="actions"
-            *ngIf="mainPageForm.controls['username']?.invalid && mainPageForm.controls['username']?.touched">
+       <div class="actions"
+            *ngIf="mainPageForm.controls['username']?.touched 
+            && mainPageForm.controls['username']?.value 
+            && mainPageForm.controls['username']?.invalid">
             Please enter a valid email address
         </div>
+
     </form>
 
     <!-- Create Account Popup -->
