@@ -1,0 +1,25 @@
+<mat-toolbar class= "toolbar">
+    <span>PersonaDesk</span>
+    <span class="spacer"></span>
+    <a class="toolbar-link" >Profile</a>
+</mat-toolbar>
+
+<!-- app.component.html -->
+ <div class="content-wrapper">
+<div class="card-grid">
+  <div class="card-item" *ngFor="let card of cards.slice(0,3)" (click)="openCard(card)">
+    <p-card class="clickable-card">
+      <p>{{ card.cardName }}</p>
+    </p-card>
+  </div>
+</div>
+
+<div class="card-grid1">
+  <div class="card-item" *ngFor="let card of cards.slice(3,5)" (click)="openCard(card)">
+    <p-card class="clickable-card">
+      <p>{{ card.cardName }}</p>
+    </p-card>
+  </div>
+</div>
+</div>
+
